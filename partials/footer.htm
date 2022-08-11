@@ -1,0 +1,24 @@
+[staticMenu footerMenu]
+code = "footer-menu"
+==
+<footer class="container-fluid" id="footer">
+    <div class="container-lg">
+        <div class="border-1 border-top py-5">
+            <div class="row row-cols-1 row-cols-sm-2">
+                <p class="mb-0 col text-center text-sm-start">
+                    &copy;{{ "now"|date("Y") }} The Corleon Barbershop
+                </p>
+
+                <p class="mb-0 col d-flex align-items-center justify-content-center justify-content-sm-end">
+                    Web máme od:
+
+                    <img src="{{ 'assets/images/icons/doubledot.svg'|theme }}" alt="Doubledot" class="ms-2 me-1">
+
+                    <a href="https://www.leschinger.cz/" target="_blank" class="text-gold text-black-hover transition">
+                        Leschinger.cz
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

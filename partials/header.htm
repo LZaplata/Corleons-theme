@@ -1,0 +1,93 @@
+<header class="container-fluid position-relative bg-black">
+    <picture>
+        <source srcset="{{ 'assets/images/banner/01@2x.webp'|theme }} 2x" media="(min-width: 992px)">
+        <source srcset="{{ 'assets/images/banner/01@3x.webp'|theme }} 3x" media="(min-width: 992px)">
+        <source srcset="{{ 'assets/images/banner/01-sm.webp'|theme }}" media="(max-width: 991px)">
+        <source srcset="{{ 'assets/images/banner/01-sm@2x.webp'|theme }} 2x" media="(max-width: 991px)">
+        <source srcset="{{ 'assets/images/banner/01-sm@3x.webp'|theme }} 3x" media="(max-width: 991px)">
+
+        <img src="{{ 'assets/images/banner/01.webp'|theme }}"
+             class="img1 position-absolute">
+    </picture>
+
+    <img src="{{ 'assets/images/banner/02.webp'|theme }}"
+        srcset="{{ 'assets/images/banner/02@2x.webp'|theme }} 2x, {{ 'assets/images/banner/02@3x.webp'|theme }} 3x"
+        class="d-none d-lg-block position-absolute end-0 bottom-0">
+
+    <div class="container-lg position-relative h-100 py-4 d-flex flex-column">
+        <div class="row">
+            <div class="d-none d-lg-flex col-lg-3 justify-content-lg-end align-items-lg-center col-xxl-4">
+                <nav class="nav nav-pills d-none d-lg-flex gap-5">
+                    <li class="nav-item">
+                        <a href="{{ 'homepage'|page }}/#sluzby" class="nav-link text-uppercase">
+                            služby
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ 'homepage'|page }}/#klienti" class="nav-link text-uppercase">
+                            klienti
+                        </a>
+                    </li>
+                </nav>
+            </div>
+
+            <div class="text-center logo col-8 offset-2 col-lg-6 offset-lg-0 col-xxl-4">
+                <a href="{{ 'homepage'|page }}">
+                    <img src="{{ 'assets/images/logo.svg'|theme }}" alt="Stylové pánské holičství v Trutnově"
+                        class="img-fluid">
+                </a>
+            </div>
+
+            <div class="col-2 d-flex justify-content-end align-items-center col-lg-3 justify-content-lg-start col-xxl-4">
+                <a href="#offcanvas" data-bs-toggle="offcanvas" class="menu-toggle bg-gold d-block d-lg-none"></a>
+
+                <nav class="nav nav-pills d-none d-lg-flex gap-5 align-items-lg-center">
+                    <li class="nav-item">
+                        <a href="{{ 'homepage'|page }}/#kontakty" class="nav-link text-uppercase">
+                            kontakty
+                        </a>
+                    </li>
+
+                    <li class="nav-item socials">
+                        <a href="{{ this.theme.facebook }}" class="fb d-inline-block bg-white bg-gold-hover transition"></a>
+
+                        <a href="{{ this.theme.instagram }}" class="ig d-inline-block bg-white bg-gold-hover transition ms-2"></a>
+                    </li>
+                </nav>
+            </div>
+        </div>
+
+        <div class="mt-auto">
+            <h1 class="text-uppercase fw-regular text-center text-white lh-base mb-4">
+                Stylové pánské holičství <br>
+
+                <span class="text-gold">
+                    v Trutnově
+                </span>
+            </h1>
+
+            <p class="text-center">
+                <img src="{{ 'assets/images/icons/arrow-curly-down.svg'|theme }}" alt="arrow">
+            </p>
+
+            <p class="mb-0 text-center">
+                <a href="tel:{{ this.theme.phone }}" class="btn btn-white d-inline-flex align-items-center justify-content-center">
+                    <span class="phone bg-black me-2"></span> {{ this.theme.phone }}
+                </a>
+            </p>
+        </div>
+
+        <div class="mt-5 mt-lg-auto">
+            <p class="text-center text-uppercase fs-10 ff-oswald">
+                <a href="#sluzby" class="text-white text-decoration-none text-gold-hover transition">
+                    objevte svůj styl
+                </a>
+            </p>
+
+            <p class="mb-0 text-center">
+                <img src="{{ 'assets/images/icons/arrow-long-down.svg'|theme }}" alt="arrow">
+            </p>
+        </div>
+    </div>
+</header>

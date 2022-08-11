@@ -1,0 +1,33 @@
+uuid: 830e7724-868e-49c3-8873-7d472693e29e
+handle: Instagram\Photo
+type: stream
+name: Instagram
+drafts: false
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: Instagram
+    icon: icon-instagram
+    order: 30
+
+navigation:
+    icon: icon-picture-o
+    label: Fotky
+    parent: Instagram\Photo
+    order: 10
+
+fields:
+    photo:
+        label: Fotka
+        type: fileupload
+        maxFiles: 1
+        span: left
+        commentAbove: Možné je nahrát maximálně 1 fotku.
+        scope: false
+        column: false
+    ig:
+        label: Odkaz na Instagram
+        span: right
+        commentAbove: Vložte URL příspěvku na Instagramu, na který má fotka odkazovat.

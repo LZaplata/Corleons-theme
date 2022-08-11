@@ -1,0 +1,23 @@
+name: "The Corleon's"
+description: 'Theme for Trutnov barber shop.'
+author: 'Lukáš Záplata'
+homepage: ''
+authorCode: LZaplata
+code: corleons
+parent: ''
+database: '0'
+require:
+    - lzaplata.extensions
+    - initbiz.seostorm
+form:
+    fields:
+        phone:
+            label: Telefon
+            span: left
+            default: +420 723 527 171
+        facebook:
+            label: Facebook
+            span: left
+        instagram:
+            label: Instagram
+            span: right

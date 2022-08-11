@@ -1,0 +1,249 @@
+@import "custom"
+
+.btn
+    font-family: $font-family-oswald
+
+    .phone
+        display: inline-block
+        width: 20px
+        height: 20px
+        mask-image: url("../../assets/images/icons/phone.svg")
+        -webkit-mask: url("../../assets/images/icons/phone.svg")
+
+    @media (any-hover: hover)
+        &.btn-white
+            --bs-btn-hover-bg: var(--bs-gold)
+            --bs-btn-hover-border-color: var(--bs-gold)
+
+        &.btn-black
+            --bs-btn-hover-bg: var(--bs-gold)
+            --bs-btn-hover-border-color: var(--bs-gold)
+
+header
+    height: 667px
+
+    @include media-breakpoint-up(lg)
+        height: 813px
+
+        @media (any-hover: hover)
+            .nav
+                .nav-item
+                    .nav-link
+                        position: relative
+
+                        &:after
+                            content: ""
+                            width: 8px
+                            height: 2px
+                            position: absolute
+                            bottom: -5px
+                            left: 50%
+                            transform: translateX(-50%)
+                            background: var(--bs-gold)
+                            transition: $transition-base
+                            opacity: 0
+
+                        &:hover
+                            &:after
+                                opacity: 1
+
+    .img1
+        left: 50%
+        top: 80px
+        transform: translateX(-50%)
+
+        @include media-breakpoint-up(lg)
+            left: 0
+            top: auto
+            bottom: 0
+            transform: none
+
+    .logo
+        img
+            max-width: 170px
+
+            @include media-breakpoint-up(sm)
+                max-width: 287px
+
+    .menu-toggle
+        mask-image: url("../../assets/images/icons/menu.svg")
+        -webkit-mask: url("../../assets/images/icons/menu.svg")
+        width: 33px
+        height: 33px
+
+    .socials
+        a
+            width: 24px
+            height: 24px
+            mask-size: cover !important
+            -webkit-mask-size: cover !important
+
+            &.fb
+                mask-image: url("../../assets/images/icons/fb.svg")
+                -webkit-mask: url("../../assets/images/icons/fb.svg")
+
+            &.ig
+                mask-image: url("../../assets/images/icons/ig.svg")
+                -webkit-mask: url("../../assets/images/icons/ig.svg")
+
+    h1
+        @include media-breakpoint-up(sm)
+            letter-spacing: 2px
+
+#offcanvas
+    .close
+        mask-image: url("../../assets/images/icons/close.svg")
+        -webkit-mask: url("../../assets/images/icons/close.svg")
+        width: 24px
+        height: 24px
+
+    .nav
+        .nav-item
+            .nav-link
+                letter-spacing: 3.69px
+
+    .socials
+        a
+            width: 32px
+            height: 32px
+
+            &.fb
+                mask-image: url("../../assets/images/icons/fb.svg")
+                -webkit-mask: url("../../assets/images/icons/fb.svg")
+
+            &.ig
+                mask-image: url("../../assets/images/icons/ig.svg")
+                -webkit-mask: url("../../assets/images/icons/ig.svg")
+
+#sluzby
+    h2
+        height: 137px
+        background-image: url("../../assets/images/headings/services-prices.svg")
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: contain
+        letter-spacing: 3px
+
+        &:after
+            content: ""
+            width: 16px
+            height: 2px
+            position: absolute
+            bottom: 40px
+            left: 50%
+            transform: translateX(-50%)
+            background: var(--bs-black)
+
+    .services
+        .service
+            .middle
+                &:after
+                    content: ""
+                    position: absolute
+                    left: 0
+                    top: 50%
+                    width: 100%
+                    height: 0
+                    transform: translateY(-50%)
+                    border-top: 1px dotted var(--bs-black)
+
+#klienti
+    h2
+        height: 139px
+        background-image: url("../../assets/images/headings/reviews.svg")
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: contain
+        letter-spacing: 3px
+
+        &:after
+            content: ""
+            width: 16px
+            height: 2px
+            position: absolute
+            bottom: 40px
+            left: 50%
+            transform: translateX(-50%)
+            background: var(--bs-white)
+
+    .swiper
+        --swiper-pagination-color: var(--bs-white)
+        --swiper-pagination-bullet-inactive-color: rgba(var(--bs-white-rgb), .6)
+        --swiper-navigation-color: var(--bs-black)
+
+        .review
+            .content
+                color: rgba(var(--bs-white-rgb), .7)
+
+        .swiper-button
+            width: 48px
+            height: 48px
+            top: auto
+            left: auto
+            right: auto
+            transition: $transition-base
+
+            @include media-breakpoint-up(md)
+                @media (any-hover: hover)
+                    border-color: transparent !important
+
+                    &:hover
+                        border-color: var(--bs-gold) !important
+
+            &:after
+                content: ""
+
+            &-disabled
+                opacity: 1 !important
+                border: none !important
+
+        .swiper-controls
+            @include media-breakpoint-up(md)
+                transform: translateY(-100%)
+                position: relative
+                z-index: 1
+
+#instagram
+    h2
+        height: 100px
+        background-image: url("../../assets/images/headings/instagram.svg")
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: contain
+
+#kontakty
+    h2
+        height: 134px
+        background-image: url("../../assets/images/headings/contacts.svg")
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: contain
+        letter-spacing: 3px
+
+        &:after
+            content: ""
+            width: 16px
+            height: 2px
+            position: absolute
+            bottom: 40px
+            left: 50%
+            transform: translateX(-50%)
+            background: var(--bs-black)
+
+    .socials
+        a
+            width: 24px
+            height: 24px
+            mask-size: cover !important
+            -webkit-mask-size: cover !important
+
+            &.fb
+                mask-image: url("../../assets/images/icons/fb.svg")
+                -webkit-mask: url("../../assets/images/icons/fb.svg")
+
+            &.ig
+                mask-image: url("../../assets/images/icons/ig.svg")
+                -webkit-mask: url("../../assets/images/icons/ig.svg")
+
+footer
+    --bs-border-color: rgba(30, 31, 35, 0.12)

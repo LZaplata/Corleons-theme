@@ -1,0 +1,29 @@
+uuid: f47cbb89-b7be-4f42-9985-cfa2ffe7e3da
+handle: Services\Service
+type: structure
+name: Služby & ceny
+drafts: false
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: Služby & ceny
+    icon: icon-money
+    order: 10
+
+navigation:
+    icon: icon-list-ul
+    label: Služby & ceny
+    parent: Services\Service
+    order: 10
+
+fields:
+    price:
+        label: Cena
+        span: left
+        type: number
+    description:
+        label: Popis služby
+        type: textarea
+        size: small

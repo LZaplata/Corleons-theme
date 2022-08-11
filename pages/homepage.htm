@@ -1,0 +1,149 @@
+url = "/"
+layout = "default"
+title = "Úvod"
+
+[collection services]
+handle = "Services\Service"
+
+[collection reviews]
+handle = "Reviews\Review"
+
+[collection photos]
+handle = "Instagram\Photo"
+==
+<div class="container-fluid py-5" id="sluzby">
+    <div class="container-lg py-xl-4">
+        <h2 class="text-uppercase d-flex align-items-center justify-content-center fss-24 mb-5 position-relative">
+            služby & ceny
+        </h2>
+
+        <div class="pt-xl-4 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            <div class="row row-cols-1 services g-4">
+                {% for service in services %}
+                    {% partial "service/default" service=service %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <p class="text-center">
+                <img src="{{ 'assets/images/icons/arrow-curly-down-black.svg'|theme }}" alt="arrow">
+            </p>
+
+            <p class="mb-0 text-center">
+                <a href="tel:{{ this.theme.phone }}" class="btn btn-black d-inline-flex align-items-center justify-content-center">
+                    <span class="phone bg-white me-2"></span> {{ this.theme.phone }}
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-5 bg-black pb-md-3" id="klienti">
+    <div class="container-lg py-xl-4">
+        <h2 class="text-uppercase d-flex align-items-center justify-content-center fss-24 mb-4 position-relative text-white mb-sm-5">
+            spokojení klienti
+        </h2>
+
+        <div class="swiper reviews-swiper col-xl-10 offset-xl-1 pt-md-4">
+            <div class="swiper-wrapper">
+                {% for review in reviews %}
+                    <div class="swiper-slide review">
+                        {% partial "review/default" review=review %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="swiper-controls mt-5 row mt-md-0">
+                <div class="col d-flex align-items-center offset-md-6 ps-xl-5">
+                    <div class="swiper-pagination position-relative bottom-0 text-start"></div>
+                </div>
+
+                <div class="col d-flex justify-content-end">
+                    <div class="swiper-button swiper-button-prev position-relative rounded-circle border-1 border border-gold d-inline-flex mt-0">
+                        <img src="{{ 'assets/images/icons/arrow-left.svg'|theme }}" alt="prev">
+                    </div>
+
+                    <div class="swiper-button swiper-button-next position-relative rounded-circle border-1 border border-gold d-inline-flex mt-0 ms-1">
+                        <img src="{{ 'assets/images/icons/arrow-right.svg'|theme }}" alt="next">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid pt-5 px-0 overflow-hidden" id="instagram">
+    <div class="container-lg py-xl-4">
+        <h2 class="d-flex align-items-center justify-content-center fss-15 mb-0 ff-archivo fw-medium mb-5">
+            <a href="{{ this.theme.instagram }}" class="text-decoration-none text-black text-gold-hover transition d-inline-flex align-items-center">
+                <img src="{{ 'assets/images/icons/ig-original.svg'|theme }}" alt="instagram" class="me-2"> thecorleons_barber.shop
+            </a>
+        </h2>
+    </div>
+
+    <div class="swiper instagram-swiper">
+        <div class="swiper-wrapper">
+            {% for photo in photos %}
+                <div class="swiper-slide">
+                    <a href="{{ photo.ig }}" target="_blank">
+                        <img src="{{ photo.photo.thumb(285, 285, {"mode": "crop"}) }}" alt="{{ photo.description }}" class="img-fluid">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-5" id="kontakty">
+    <div class="container-lg py-xl-4">
+        <h2 class="text-uppercase d-flex align-items-center justify-content-center fss-24 mb-4 position-relative mb-md-5">
+            Kde nás najdeš?
+        </h2>
+
+        <div class="row pt-xl-4">
+            <div class="col-12 col-md-5 d-flex align-items-center col-lg-4 col-xl-3">
+                <div>
+                    <p class="mb-4">
+                        <a href="tel:{{ this.theme.phone }}"
+                            class="d-flex align-items-center fss-24 ff-oswald fw-medium text-decoration-none text-black text-gold-hover transition">
+
+                            <img src="{{ 'assets/images/icons/phone-lg.svg'|theme }}" alt="telefon" class="me-2"> {{ this.theme.phone }}
+                        </a>
+                    </p>
+
+                    <p class="mb-2">
+                        Polská 93, <br>
+                        Dolní Předměstí <br>
+                        541 01, Trutnov
+                    </p>
+
+                    <p class="mb-4">
+                        <a href="https://en.mapy.cz/s/kevevubana" target="_blank" class="text-gold text-black-hover transition">
+                            Zobrazit na mapě
+                        </a>
+                    </p>
+
+                    <p class="mb-4">
+                        <span class="fw-bold">IČO:</span> 777 444 555 <br>
+                        Zapsán na živnostenském úřadě v Trtutnově
+                    </p>
+
+                    <p class="mb-0 socials">
+                        <a href="{{ this.theme.facebook }}" class="fb d-inline-block bg-black bg-gold-hover transition"></a>
+
+                        <a href="{{ this.theme.instagram }}" class="ig d-inline-block bg-black bg-gold-hover transition ms-2"></a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-12 mt-4 col-md-7 mt-md-0 col-lg-8 col-xl-9">
+                <a href="https://en.mapy.cz/s/kevevubana" target="_blank">
+                    <img src="{{ 'assets/images/map.webp'|theme }}"
+                         srcset="{{ 'assets/images/map@2x.webp'|theme }} 2x, {{ 'assets/images/map@3x.webp'|theme }} 3x"
+                         class="img-fluid">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

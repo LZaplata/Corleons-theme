@@ -1,0 +1,33 @@
+uuid: 12a199c4-14e3-4a6d-a810-c762231eb7b7
+handle: Reviews\Review
+type: structure
+name: Spokojení klienti
+drafts: false
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: Spokojení klienti
+    icon: icon-quote-right
+    order: 20
+
+navigation:
+    icon: icon-list-ul
+    label: Recenze
+    parent: Reviews\Review
+    order: 10
+
+fields:
+    content:
+        label: Text
+        type: textarea
+        size: small
+    images:
+        label: Obrázky
+        type: fileupload
+        maxFiles: 2
+        span: left
+        commentAbove: Možné je nahrát maximálně 2 fotky.
+        scope: false
+        column: false

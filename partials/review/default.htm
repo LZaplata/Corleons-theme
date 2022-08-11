@@ -1,0 +1,25 @@
+<div class="row row-cols-1 row-cols-md-2">
+    <div class="col order-md-1 ps-xl-5">
+        <p>
+            <img src="{{ 'assets/images/icons/quote.svg'|theme }}" alt="quote">
+        </p>
+
+        <h3 class="text-uppercase text-white fs-18 mb-3">
+            {{ review.title }}
+        </h3>
+
+        <p class="mb-0 content mb-md-5">
+            {{ review.content|raw }}
+        </p>
+    </div>
+
+    <div class="col mt-4 order-md-0 mt-md-0">
+        <div class="row row-cols-2">
+            {% for image in review.images %}
+                <a href="{{ image.path }}" class="col image">
+                    <img src="{{ image.thumb(206, 261, {"mode": "crop"}) }}" alt="{{ image.description }}" class="img-fluid w-sm-100">
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
